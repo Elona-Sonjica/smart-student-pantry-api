@@ -1,7 +1,12 @@
 # Stage 1: Build the application using Maven
 FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
-COPY src/main/java/za/ac/cput/smartstudentpantryapi .
+
+# Copy the pom.xml and source code together
+COPY pom.xml .
+COPY src ./src
+
+# Build the jar file
 RUN mvn clean package -DskipTests
 
 # Stage 2: Run the application
