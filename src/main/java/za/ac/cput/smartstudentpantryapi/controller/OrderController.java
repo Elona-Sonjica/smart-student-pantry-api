@@ -10,6 +10,7 @@ import za.ac.cput.smartstudentpantryapi.service.OrderService;
 
 @RestController
 @RequestMapping("/api/orders")
+@CrossOrigin(origins = "*")
 public class OrderController {
 
     @Autowired
